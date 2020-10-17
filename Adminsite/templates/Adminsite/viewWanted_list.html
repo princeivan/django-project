@@ -1,0 +1,25 @@
+{% extends 'Adminsite/base.html' %}
+
+{% block content %}
+<div class="container"><br><br><br>
+    <h1 class="text-center"><b>THESE ARE THE MOST WANTED CRIMINALS</b></h1><br>
+    <div class="row"><br>
+        
+            {% for item in theresults %}
+            <div class="col-sm-4">
+                <div>
+                    <center>
+                        <img src="{{item.image.url}}" class="img-fluid" style="height:200px; width:auto;">
+                    </center>
+                    <p><b>Name:&nbsp;</b>{{item.name}}</p>
+                    <p style="margin-top:-10px"><b>Description:&nbsp;</b>{{item.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        
+            
+
+    </div>
+</div>
+
+{% endblock  %}

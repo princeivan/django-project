@@ -1,0 +1,42 @@
+<table class="table"><br><br>
+        <div class="col-12 col-md-10 mb-3 mx-auto">
+        
+        
+                <thead class="thead-dark">
+                        <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Contacts</th>
+                                {% if request.user.is_authenticated %}
+                                <th></th>
+                                <th></th>
+                                {% endif %}
+
+                         </tr>
+
+                </thead>
+                     
+                    
+                    <tbody>
+                        
+                            <tr scope='row'> 
+                                    <td>{{policestation.name }}</td>
+                                    <td>{{policestation.location}}</td>
+                                    <td>{{ policestation.Contacts}}</td>
+                             {% if request.user.is_authenticated %}
+                        <th><a href="{{object.get_edit_url}}"><button class="btn btn-primary">Edit</button></a></th>
+                        <th><a href="{{object.get_delete_url}}"><button class="btn btn-danger">delete</button></a></th>
+                        {% endif %}
+                        </tr>
+
+                        
+
+                    </tbody>
+                
+                
+              </table>  
+           
+
+    </div>
+   </div>
+   

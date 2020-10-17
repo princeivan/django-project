@@ -1,0 +1,43 @@
+{% extends 'Adminsite/base.html' %}
+
+{% block content %}
+<div class="container"><br>
+        <a  href ="{% url 'Admin:Addreport'%}" class="btn btn-primary">&nbsp;Add report&nbsp;</a><br><br>
+    <div class="row">
+        
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                        <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                                <th>Date</th>
+                        </tr>
+
+                </thead>
+                    
+                    {% for item in query_results %}
+                    <tbody>
+                            <tr scope="row"> 
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ item.title }}</td>
+                                    <td>{{ item.description}}</td>
+                                    <td>{{ item.location}}</td>
+                                    <td>{{ item.status}}</td>
+                                    <td>{{ item.Time}}</td>
+                                    <td>{{ item.Date}}</td>
+                            
+                            </tr>
+      
+                    </tbody>
+                    
+                    {% endfor %}
+                </table>
+
+    </div>
+</div>
+
+{% endblock  %}

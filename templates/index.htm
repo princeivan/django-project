@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{%block custom_css%}
+<link rel="stylesheet"  href="{% static 'css/homepage_style.css'%}" >
+
+{% endblock %}
+
+
+<div class ="container">
+    <div class= "row">
+        <div class = "col">
+            <div id="home-content">
+                <h1> Crime Report-get Started</h1>
+                <h3> <span style="color: azure">Your voice would save other</span>s </h3>
+                <hr>
+                <a href="{% url 'reports:reports'%}"><button type= "button" class="btn btn-danger bt-lg" >Get Started</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+    

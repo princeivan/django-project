@@ -1,0 +1,96 @@
+<!-- {% extends 'Adminsite/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3"><br><br>
+                <a  href ="{% url 'Admin:viewpolicestation'%}" class="btn btn-primary">View</a><br><br>
+                {% if messages %}
+                <ul>
+                   {% for message in messages %}
+                       <li>{{ message }}</li>
+                   {% endfor %}
+                </ul>
+                {% endif %}
+            <form action = '' method ='POST'>
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    {{field.errors}}
+                    {{field.label_tag}}
+                    {{field}}
+                </div>
+                
+                {% endfor %}
+
+            
+                <input type ='submit' value ='Save' class="btn btn-primary">
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock  %} -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <button class="navbar-toggler navbar-toggler-right navbar-fjsite" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </button>
+
+            <a class="navbar-brand fjsite" href="/"><img src="/images/logo-fj-sm-rev2.svg" alt="FlexJobs - Find a Better Way to Work" role="link"></a>
+
+
+        <p class="float-right d-lg-none navbar-sidebar-button" style="margin:0;">
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas" style="background:#f7961d;border-color:#f7961d;margin:10px 0;">sidebar &raquo;</button>
+        </p>
+      
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+          <div class="search-wrapper">
+          <div id="search-expand" style="z-index:999;float:right;display:none;position:fixed;">
+              <form action="/search" method="get" class="navbar-form navbar-left form-inline">
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-prepend">
+                              <button class="btn btn-default search-close" type="button" role="button">
+                                 <i class="fa fa-times-circle"></i>
+                              </button>
+                          </span>
+
+                          <input id="search-keywords" name="search" type="text" class="form-control" placeholder="Keywords" style="padding-left:4px;width:312px;">
+                          <input id="search-loc" type="text" name="location" class="form-control" placeholder="City, State, or Zip">
+
+                          <span class="input-group-append">
+                              <button class="btn btn-default search-look" type="submit" role="button">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <span class="adv-search-link"><a href="/searchOptions.aspx">Advanced Search</a></span>
+              </form>
+          </div>
+          </div>
+
+              <ul class="navbar-nav mr-auto top-nav-left">
+                  <li class="nav-item"><a href="/jobs" role="link" class="nav-link">Jobs</a></li>
+                          <li class="nav-item"><a href="/About.aspx" role="link" class="nav-link">How FlexJobs Works</a></li>  
+
+                  <li class="nav-item"><a href="//www.flexjobs.com/blog/" role="link" class="nav-link">Job Search Tips & Blog</a></li>  
+                  <li class="nav-item"><a href="/company-guide" role="link" class="nav-link">Research Companies</a></li>
+                  <li class="nav-item">
+
+                      <button id="search-start" class="btn btn-default nohover" href="#" style="outline-width:0;" role="link">
+                          <i class="fa fa-search"></i>
+                           Search Jobs...
+                       </button>
+                  </li>
+              </ul>
+          
+          <ul class="navbar-nav mr-left member logged-in" id="member-navbar-info">
+          </ul>
+
+  
+</nav>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container"><br><br>
+    <div class="row"><br><br>
+        
+            <table class="table">
+                <thead class="thead-dark">
+                        <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Contacts</th>
+                                {% if request.user.is_authenticated %}
+                                <th></th>
+                                <th></th>
+                                {% endif %}
+
+                         </tr>
+
+                </thead>
+                     
+                    {% for item in query_results %}
+                    <tbody>
+                            <tr scope="row"> 
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.location}}</td>
+                                    <td>{{ item.Contacts}}</td>
+                             {% if request.user.is_authenticated %}
+                        <th><button class="btn btn-primary">Edit</button></th>
+                        <th><button class="btn btn-danger">Delete</button></th>
+                        {% endif %}
+                                </tr>
+
+                    </tbody>
+                
+                    {% endfor %}
+                </table>
+
+    </div>
+</div>
+{% endblock  %}

@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+{% block content %}
+<div class="container"><br><br>
+   <div class="row">
+    
+           <div class="table">
+               <button class='btn btn-primary'>Add Policestation</button>       
+{% for object in object_list %}
+
+    {% include 'policestation/list-inline.html' with policestation=object detail=True %}
+       
+
+    {% endfor %}
+    
+           </div>
+           
+    
+   
+</div> 
+</div>
+
+
+
+{% endblock %}  

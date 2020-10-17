@@ -1,0 +1,39 @@
+{% extends 'Adminsite/base.html' %}
+
+{% block content %}
+<div class="container"><br><br>
+    <div class="row"><br><br>
+        
+            <table class="table">
+                <thead class="thead-dark">
+                        <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Contacts</th>
+                                <th></th>
+                                <th></th>
+
+                         </tr>
+
+                </thead>
+                     
+                    {% for item in theresults %}
+                    <tbody>
+                            <tr scope="row"> 
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.location}}</td>
+                                    <td>{{ item.Contacts}}</td>
+                                    <th><button class="btn btn-primary">Edit</button></th>
+                                    <th><button class="btn btn-danger">Delete</button></th>
+                            
+                                </tr>
+
+                    </tbody>
+                  
+                    {% endfor %}
+                </table>
+
+    </div>
+</div>
+
+{% endblock  %}

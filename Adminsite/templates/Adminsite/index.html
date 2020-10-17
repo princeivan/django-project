@@ -1,0 +1,29 @@
+{% extends 'Adminsite/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{%block custom_css%}
+<link rel="stylesheet"  href="{% static 'css/home_style.css'%}" >
+
+{% endblock %}
+
+
+<div class ="container">
+    <div class= "row">
+        <div class = "col">
+            <div id="home-content">
+                <h1> Crime -Report</h1>
+                <h3> Welcome Admin to yur site</h3>
+                <hr>
+                <button type= "button" class="btn btn-danger bt-lg">Get Started</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                
+
+{% endblock %}
